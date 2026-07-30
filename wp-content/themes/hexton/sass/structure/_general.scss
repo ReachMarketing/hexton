@@ -1,0 +1,11 @@
+html, body {
+    @apply overflow-x-clip;
+}
+
+body {
+    @apply text-copy text-[16px];
+}
+
+.screen-reader-text {
+    @apply hidden;
+}
