@@ -9,3 +9,54 @@ body {
 .screen-reader-text {
     @apply hidden;
 }
+
+
+.top-left {
+    @apply absolute md:-left-[20px] -left-[15px] md:-top-[20px] -top-[15px];
+
+    .top {
+        @apply md:h-[20px] h-[15px] bg-winvic-bright-red lg:w-[191px] w-[150px] absolute top-0 left-0;
+    }
+
+    .left {
+        @apply lg:h-[283px] h-[200px] border-winvic-bright-red md:border-l-[20px] border-l-[15px] md:border-b-[20px] border-b-[15px] absolute top-0 left-0 border-b-transparent;
+    }
+}
+
+.bottom-left {
+    @apply absolute md:-left-[20px] -left-[15px] md:-bottom-[20px] -bottom-[15px];
+
+    .bottom {
+        @apply md:h-[20px] h-[15px] bg-winvic-red lg:w-[191px] w-[150px] absolute bottom-0 left-0;
+    }
+
+    .left {
+        @apply lg:h-[191px] h-[150px] md:w-[20px] w-[15px] bg-winvic-red absolute bottom-0 left-0;
+    }
+}
+
+.contact-sidebutton {
+    @apply fixed bottom-[20px] right-[74px] z-[2500] h-[74px] rotate-90 origin-bottom-right;
+
+    .button {
+        @apply bg-winvic-red text-white uppercase text-[28px] font-semibold pr-[30px] pl-[88px] flex items-center h-full;
+    }
+
+    .white-flash {
+        @apply absolute top-0 w-[100px] bg-[#F0F1F4] left-0 h-full -translate-x-1/2 skew-x-[45deg];
+
+        .logo {
+            @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -skew-x-[45deg];
+
+            img {
+                @apply -rotate-90;
+            }
+        }
+    }
+    
+}
+
+
+section.temp {
+    @apply h-screen border-b-[1px] border-b-winvic-red;
+}

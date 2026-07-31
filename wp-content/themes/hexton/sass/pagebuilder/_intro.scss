@@ -1,0 +1,23 @@
+section.intro {
+    @apply lg:px-[74px] px-[40px];
+
+    .inner-section {
+        @apply grid grid-cols-12 relative;
+
+        &:after {
+            @apply content-[""] absolute block top-0 right-0 h-screen w-[1px] bg-white z-[2001];
+        }
+
+        .red-box {
+            @apply relative z-[2000] col-span-6 col-start-7 bg-winvic-red -mr-[74px] pr-[calc(12%+74px)] pl-[50px] pt-[20px] pb-[40px] text-white font-normal text-[30px] leading-[1.4em];
+        }
+
+        h2.title {
+            @apply col-span-6 pt-[50px];
+
+            p {
+                @apply text-copy font-light text-[62px] leading-[1.1em]
+            }
+        }
+    }
+}

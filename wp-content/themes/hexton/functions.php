@@ -57,7 +57,7 @@ function reach_assets()
     wp_enqueue_script('gsap-js', 'https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js?v=' . $version, array(), false, true);
     wp_enqueue_script('gsap-js2', 'https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js?v=' . $version, array('gsap-js'), false, true);
     wp_enqueue_script('gsap-js3', 'https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js?v=' . $version, array('gsap-js'), false, true);
-    //wp_enqueue_script('gsap-js5', 'https://cdn.jsdelivr.net/npm/gsap@3.15/dist/DrawSVGPlugin.min.js?v=' . $version, array('gsap-js'), false, true);
+    wp_enqueue_script('gsap-js5', 'https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollToPlugin.min.js?v=' . $version, array('gsap-js'), false, true);
     //wp_enqueue_script('gsap-js5', 'https://cdn.jsdelivr.net/npm/gsap@3.15/dist/MorphSVGPlugin.min.js?v=' . $version, array('gsap-js'), false, true);
     wp_enqueue_script('gsap-js6', get_template_directory_uri() . '/js/gsap.js?v=' . $version, array('gsap-js'), false, true);
 }

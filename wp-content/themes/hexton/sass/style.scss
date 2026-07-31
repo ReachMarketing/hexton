@@ -16,3 +16,10 @@ Author URI: https://www.reachmarketing.co.uk
  * Structure
  **/
 @import "structure/general";
+@import "structure/header";
+
+/********
+ * Page Builder
+ **/
+@import "pagebuilder/hero";
+@import "pagebuilder/intro";
