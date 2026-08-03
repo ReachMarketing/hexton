@@ -23,7 +23,7 @@
                     <div class="logo">{$logo}</div>
                     <div class="navigation">
                         <div class="menu-toggle">
-                            <div id="nav-icon">
+                            <div id="nav-icon2">
                                 <span></span>
                                 <span></span>
                                 <span></span>

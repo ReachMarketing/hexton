@@ -1,23 +1,27 @@
 section.intro {
-    @apply lg:px-[74px] px-[40px];
+    @apply lg:px-[74px] px-[40px] pb-[100px];
 
     .inner-section {
         @apply grid grid-cols-12 relative;
 
-        &:after {
-            @apply content-[""] absolute block top-0 right-0 h-screen w-[1px] bg-white z-[2001];
-        }
-
         .red-box {
-            @apply relative z-[2000] col-span-6 col-start-7 bg-winvic-red -mr-[74px] pr-[calc(12%+74px)] pl-[50px] pt-[20px] pb-[40px] text-white font-normal text-[30px] leading-[1.4em];
+            @apply relative z-[2000] lg:col-span-6 lg:col-start-7 md:col-span-8 md:col-start-5 col-span-12 bg-winvic-red -mr-[74px] md:pr-[calc(12%+74px)] pr-[60px] md:pl-[5%] pl-[74px] md:pt-[3%] pt-[35px] pb-[5%] text-white font-normal lg:text-[1.6vw] md:text-[2.2vw] text-[4vw] leading-[1.4em] -ml-[74px] md:ml-0 md:border-t-0 border-t-[1px] mt-[5px] md:mt-0;
+
+            &:after {
+                @apply hidden lg:block content-[""] absolute top-0 right-[74px] h-full w-[1px] bg-white z-[2001];
+            }
         }
 
         h2.title {
-            @apply col-span-6 pt-[50px];
+            @apply lg:col-span-7 md:col-span-10 col-span-12 pt-[50px] pb-[5em];
 
             p {
-                @apply text-copy font-light text-[62px] leading-[1.1em]
+                @apply text-copy font-light lg:text-[3.236vw] md:text-[4.5vw] text-[8vw] leading-[1.1em]
             }
+        }
+
+        .box-wrapper {
+            @apply col-span-12 grid grid-cols-12 gap-[15px] relative;
         }
     }
 }

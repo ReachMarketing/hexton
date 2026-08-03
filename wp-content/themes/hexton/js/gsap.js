@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 gsap.to(window, {
                     scrollTo: {
                         y: elem,
+                        offsetY: 90,
                         autoKill: true
                     },
                     ease: 'power4.out',
@@ -111,6 +112,163 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
             });
         });
+
+
+
+
+
+        const navbar = document.querySelector(".fixed-header");
+        const stickySections = document.querySelectorAll(".section");
+
+        let mm = gsap.matchMedia();
+
+        stickySections.forEach((parent) => {
+        const pinnedWrapper = parent.querySelector(".section-fixed");
+        const title = parent.querySelector("h2");
+
+        // Dynamic start/end calculations
+        const getStartPos = () => {
+            const navHeight = navbar ? navbar.offsetHeight : 0;
+            return `top ${navHeight - 1}px`;
+        };
+        
+        const getEndPos = () => `bottom ${pinnedWrapper.offsetHeight + 409}px`;
+
+        // 1. PINNING SCROLLTRIGGER
+        ScrollTrigger.create({
+            trigger: parent,
+            pin: pinnedWrapper,
+            pinSpacing: false,
+            start: getStartPos,
+            end: getEndPos,
+            scrub: true,
+            invalidateOnRefresh: true
+        });
+
+        // 2. ADAPTIVE TITLE ANIMATION
+        if (title) {
+            // Desktop (1024px and above)
+            mm.add("(min-width: 1024px)", () => {
+            return createTitleAnimation({
+                x: -70,
+                y: -180,
+            });
+            });
+
+            // Mobile (Below 1024px)
+            mm.add("(max-width: 1023px)", () => {
+            return createTitleAnimation({
+                x: -55,
+                y: -150,
+            });
+            });
+
+            function createTitleAnimation(vars) {
+            const titleTween = gsap.to(title, {
+                ...vars,
+                rotate: 90,
+                ease: "linear",
+                duration: 0.4,
+                scale: 0.5,
+                paused: true
+            });
+
+            const titleTrigger = ScrollTrigger.create({
+                trigger: parent,
+                start: getStartPos,
+                invalidateOnRefresh: true,
+                // Ensures the animation syncs if the page loads ALREADY past the trigger point
+                onRefresh: (self) => {
+                if (self.isActive) {
+                    titleTween.progress(1);
+                } else if (self.progress === 0) {
+                    titleTween.progress(0);
+                }
+                },
+                onEnter: () => titleTween.play(),
+                onLeaveBack: () => titleTween.reverse()
+            });
+
+            // MatchMedia cleanup function
+            return () => {
+                titleTween.kill();
+                titleTrigger.kill();
+                gsap.set(title, { clearProps: "all" });
+            };
+            }
+        }
+        });
+
+        // Force ScrollTrigger to calculate positions after DOM is fully ready
+        ScrollTrigger.refresh();
+
+        gsap.utils.toArray('.fadeIn').forEach((element) => {
+            gsap.from(element, 
+            {
+                opacity: 0,
+                duration: 2,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 90%',
+                    end: 'bottom 10%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        gsap.utils.toArray('.fadeUp').forEach((element) => {
+            gsap.from(element, 
+            {
+                opacity: 0,
+                duration: 2,
+                x: -50,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 90%',
+                    end: 'bottom 10%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        gsap.utils.toArray('.fadeUpParagraphs').forEach((parent) => {
+            const children = parent.querySelectorAll('p');
+            gsap.from(children, {
+                opacity: 0,
+                duration: 2,
+                x: -50,
+                ease: 'power4.out',
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: parent,
+                    start: 'top 90%',
+                    end: 'bottom 10%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        gsap.utils.toArray('.box-wrapper').forEach((parent) => {
+            const children = parent.querySelectorAll('.box');
+            gsap.from(children, {
+                opacity: 0,
+                y: 50,
+                duration: 2,
+                ease: 'power4.out',
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: parent,
+                    start: 'top 90%',
+                    end: 'bottom 10%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+
+
 
         
        console.log("window.loaded");

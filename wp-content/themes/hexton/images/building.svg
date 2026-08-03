@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="150.088" height="117.431" viewBox="0 0 150.088 117.431">
-  <g id="Group_160" data-name="Group 160" transform="translate(0 0)">
-    <path id="Path_296" data-name="Path 296" d="M90.275,0,31.908,51.557V117.43h116.8V51.557Z" transform="translate(1.376)" fill="#e2231a"/>
-    <path id="Path_297" data-name="Path 297" d="M2.086,52.5,58.367,2.784,114.648,52.5v62.845H2.086ZM58.367,0,0,51.558V117.43H116.735V51.558Z" transform="translate(0 0)" fill="#999aa1"/>
-    <path id="Path_298" data-name="Path 298" d="M31.908,50.952v65.871H115.36V50.952l-41.691-36.9Z" transform="translate(1.376 0.606)" fill="#8b2332"/>
-  </g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.08 117.43"><defs><style>.cls-1{fill:#8b2332;}.cls-2{fill:#999aa1;}.cls-3{fill:#e2231a;}</style></defs><g id="Group_160"><path id="Path_296" class="cls-3" d="M91.65,0l-58.37,51.56v65.87h116.8V51.56L91.65,0Z"/><path id="Path_297" class="cls-2" d="M2.09,52.5L58.37,2.78l56.28,49.72v62.85H2.09v-62.85ZM58.37,0L0,51.56v65.87h116.74V51.56L58.37,0Z"/><path id="Path_298" class="cls-1" d="M33.28,51.56v65.87h83.45V51.56L75.04,14.66l-41.76,36.9Z"/></g></svg>

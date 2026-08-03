@@ -1,0 +1,17 @@
+section.who-we-are {
+    .left-column, .right-column {
+        @apply mt-[50px] col-span-12 lg:col-span-6;
+    }
+
+    .left-column {
+        @apply col-start-1  mt-[25px];
+
+        p {
+            @apply text-black font-light md:text-[24px] text-[20px] leading-[1.3em] mb-[1em] mr-[8.333333%] lg:pl-[5.15%] pl-[3%];
+        }
+
+        .image {
+            @apply mt-[10%];
+        }
+    }
+}

@@ -62,7 +62,7 @@ get_template_part('template-parts/top-left');
 get_template_part('template-parts/bottom-left');
 
 echo <<<HTML
-        <div class="info-box">
+        <div class="info-box fadeIn">
             {$title}
             {$subtitle}
         </div>
@@ -71,7 +71,3 @@ echo <<<HTML
         </div>
     </section>
 HTML;
-
-
-
-

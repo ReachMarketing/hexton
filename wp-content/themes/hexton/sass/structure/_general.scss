@@ -10,6 +10,14 @@ body {
     @apply hidden;
 }
 
+section.section {
+    @apply lg:px-[74px] px-[40px] pb-[100px] min-h-screen;
+
+    .inner-section {
+        @apply grid grid-cols-12 md:gap-[20px] gap-[15px] relative;
+
+    }
+}
 
 .top-left {
     @apply absolute md:-left-[20px] -left-[15px] md:-top-[20px] -top-[15px];
@@ -35,8 +43,20 @@ body {
     }
 }
 
+.bottom-right {
+    @apply absolute md:-right-[20px] -right-[15px] md:-bottom-[20px] -bottom-[15px] z-[1550];
+
+    .bottom {
+        @apply md:h-[20px] h-[15px] bg-winvic-red lg:w-[191px] w-[150px] absolute bottom-0 right-0;
+    }
+
+    .right {
+        @apply lg:h-[191px] h-[150px] md:w-[20px] w-[15px] bg-winvic-red absolute bottom-0 -right-[1px];
+    }
+}
+
 .contact-sidebutton {
-    @apply fixed bottom-[20px] right-[74px] z-[2500] h-[74px] rotate-90 origin-bottom-right;
+    @apply lg:scale-100 scale-[0.55] fixed bottom-[20px] lg:right-[74px] right-[40px] z-[2500] h-[74px] rotate-90 origin-bottom-right;
 
     .button {
         @apply bg-winvic-red text-white uppercase text-[28px] font-semibold pr-[30px] pl-[88px] flex items-center h-full;
@@ -57,6 +77,47 @@ body {
 }
 
 
-section.temp {
-    @apply h-screen border-b-[1px] border-b-winvic-red;
+.section-fixed {
+    @apply relative border-t-[1px] border-t-winvic-bright-red col-span-12 z-[1560] translate-y-[1px];
+
+
+    &:before {
+        @apply content-[""] w-full top-0 left-0 h-[1px] bg-white absolute;
+        background: linear-gradient(180deg,rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:after {
+        @apply content-[""] w-[1px] h-[209px] border-r-[1px] border-r-winvic-bright-red right-0 top-0 absolute;
+    }
+
+    svg {
+        @apply absolute -top-[10px] left-0;
+    }
+
+    
 }
+
+h2.section-title {
+    @apply col-span-12 lg:col-span-6 uppercase xl:text-[3.645vw] lg:text-[4.5vw] sm:text-[5.5vw] text-[8vw] font-bold text-copy lg:pl-[2.125%] pl-[3%] pt-[75px] pb-[30px] origin-bottom-left;
+}
+
+.intro-text {
+    @apply lg:col-span-5 lg:col-start-7 col-span-12 xl:text-[2.084vw] lg:text-[2.8vw] sm:text-[4vw] text-[6vw] lg:mt-[5.4rem] mt-0;
+
+    p {
+        @apply text-copy xl:text-[2.084vw] lg:text-[2.8vw] sm:text-[4vw] text-[6vw] font-light leading-[1.2em] lg:pl-0 pl-[3%] lg:pr-0 pr-[5%];
+    }
+}
+
+.image {
+    @apply relative;
+
+    img {
+        @apply w-full h-full object-cover;
+    }
+
+    .bottom-right {
+        @apply -right-[19px];
+    }
+}
+
