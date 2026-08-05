@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         stickySections.forEach((parent) => {
         const pinnedWrapper = parent.querySelector(".section-fixed");
-        const title = parent.querySelector("h2");
+        //const title = parent.querySelector("h2");
 
         // Dynamic start/end calculations
         const getStartPos = () => {
@@ -146,11 +146,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
 
         // 2. ADAPTIVE TITLE ANIMATION
-        if (title) {
+        /*if (title) {
             // Desktop (1024px and above)
             mm.add("(min-width: 1024px)", () => {
             return createTitleAnimation({
-                x: -70,
+                x: -80,
                 y: -180,
             });
             });
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             // Mobile (Below 1024px)
             mm.add("(max-width: 1023px)", () => {
             return createTitleAnimation({
-                x: -55,
+                x: -52,
                 y: -150,
             });
             });
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 ...vars,
                 rotate: 90,
                 ease: "linear",
-                duration: 0.4,
+                duration: 0.3,
                 scale: 0.5,
                 paused: true
             });
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 gsap.set(title, { clearProps: "all" });
             };
             }
-        }
+        }*/
         });
 
         // Force ScrollTrigger to calculate positions after DOM is fully ready
@@ -250,8 +250,90 @@ document.addEventListener("DOMContentLoaded", function(event) {
             });
         });
 
-        gsap.utils.toArray('.box-wrapper').forEach((parent) => {
-            const children = parent.querySelectorAll('.box');
+
+        gsap.utils.toArray('.box-wrapper').forEach((parent, wrapperIndex) => {
+        const children = parent.querySelectorAll('.boxFade');
+
+        // STEP 1: PRE-SET initial states & BUILD all timelines ONCE
+        children.forEach((box, boxIndex) => {
+            // Prevent Flash of Unstyled Content (FOUC)
+            gsap.set(box, { opacity: 0, y: 50 });
+
+            // DYNAMIC ID FIX: Unique clipPath per box
+            const clipPath = box.querySelector('clipPath');
+            const clippedElement = box.querySelector('[clip-path]');
+
+            if (clipPath && clippedElement) {
+            const uniqueId = `clip-${wrapperIndex}-${boxIndex}`;
+            clipPath.id = uniqueId;
+            clippedElement.setAttribute('clip-path', `url(#${uniqueId})`);
+            }
+
+            const clipPathsToAnimate = box.querySelectorAll('path.star2-geo');
+            const singlePath = box.querySelector('path.extra-circle');
+
+            // Create a PAUSED timeline attached to the box element
+            const boxTl = gsap.timeline({ paused: true });
+
+            // Step A: Parent box fade & move up
+            boxTl.to(box, {
+            opacity: 1,
+            y: 0,
+            duration: 2,
+            ease: 'power4.out',
+            });
+
+            // Step B: Clip path animation
+            if (clipPathsToAnimate.length > 0) {
+            boxTl.from(clipPathsToAnimate, {
+                x: 0,
+                y: 0,
+                duration: 2,
+                ease: 'power4.inOut',
+            }, '<-0.4');
+            }
+
+            // Step C: Extra circle path animation
+            if (singlePath) {
+            boxTl.from(singlePath, {
+                x: -10,
+                y: 10,
+                opacity: 0,
+                duration: 0.7,
+                ease: 'power2.out',
+            }, '<1.05');
+            }
+
+            // Attach pre-built timeline to the DOM node for reuse
+            box._boxTl = boxTl;
+        });
+
+        // STEP 2: Use batch to smoothly resume/reverse pre-built timelines on scroll
+        ScrollTrigger.batch(children, {
+            start: 'top 90%',
+            end: 'bottom 10%',
+            interval: 0.2,
+            onEnter: (batch) => {
+            batch.forEach((box, index) => {
+                if (box._boxTl) {
+                // Play forward smoothly from CURRENT progress (no jumping)
+                gsap.delayedCall(index * 0.2, () => box._boxTl.play());
+                }
+            });
+            },
+            onLeaveBack: (batch) => {
+            batch.forEach((box) => {
+                if (box._boxTl) {
+                // Reverse smoothly from CURRENT progress
+                box._boxTl.reverse();
+                }
+            });
+            }
+        });
+        });
+
+        gsap.utils.toArray('.small-box-wrapper').forEach((parent) => {
+            const children = parent.querySelectorAll('.boxFade');
             gsap.from(children, {
                 opacity: 0,
                 y: 50,
@@ -267,7 +349,44 @@ document.addEventListener("DOMContentLoaded", function(event) {
             });
         });
 
+        gsap.utils.toArray('.team').forEach((parent) => {
+            const children = parent.querySelectorAll('.team-profile');
+            gsap.from(children, {
+                opacity: 0,
+                y: 50,
+                duration: 2,
+                ease: 'power4.out',
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: parent,
+                    start: 'top 90%',
+                    end: 'bottom 10%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
 
+        
+
+
+        const svg = document.querySelector("#animated-svg");
+
+        // Create timeline
+        const hoverTl = gsap.timeline({ 
+        paused: true, 
+        defaults: { duration: 0.35, ease: "power2.out" } 
+        });
+
+        hoverTl
+        // Layer_3 (Polygon_3) stays at 0
+        // Layer_2 moves 10px upward in screen space
+        .to("#Layer_1", { y: 5 })
+        // Layer_1 moves 20px upward, starting 0.08s after Layer_2 begins
+        .to("#Layer_2", { y: 10 }, "<0.08");
+
+        // Trigger on hover
+        svg.addEventListener("mouseenter", () => hoverTl.play());
+        svg.addEventListener("mouseleave", () => hoverTl.reverse());
 
 
         

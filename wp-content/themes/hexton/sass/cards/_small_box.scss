@@ -1,0 +1,24 @@
+.small-box {
+    @apply col-span-12 sm:col-span-6 lg:col-span-3 relative overflow-clip flex;
+
+    .inner-box {
+        @apply  w-full border-[1px] border-[#707070] flex flex-col justify-between aspect-[1/1];
+    }
+
+    &:after {
+        @apply content-[""] absolute top-0 right-0 w-[17.5%] aspect-[1/1] bg-white rotate-45 origin-center translate-x-1/2 -translate-y-1/2 border-b-[1px] border-b-[#707070];
+    }
+
+    .icon {
+        @apply w-[45%];
+
+        img {
+            @apply w-full h-auto;
+        }
+    }
+
+    .text {
+        @apply font-normal xl2:text-[1.4vw] lg:text-[1.6vw] md:text-[2.1vw] sm:text-[3vw] text-[4vw] pt-[12%] text-winvic-bright-red leading-[1.1em] px-[10%] pb-[10%];
+    }
+    
+}

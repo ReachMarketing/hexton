@@ -1,0 +1,44 @@
+section.what-we-do {
+    
+    .inner-section {
+
+        .left-column {
+            @apply lg:col-span-7 col-span-12;
+        }
+
+        .right-column {
+            @apply lg:col-span-5 col-span-12;
+        }
+
+        .left-column .image {
+            &.image2 {
+                @apply lg:mt-[15%] lg:w-[70%] lg:ml-[30%] md:mt-[7.5%] mt-[15%];
+            }
+        }
+
+        .right-column .image {
+            &.image3 {
+                @apply lg:mt-[55%]  md:mt-[7.5%] mt-[0];
+            }
+
+            &.image4 {
+                @apply lg:mt-[25%]  md:mt-[7.5%] mt-[15%];
+            }
+        }
+        
+        h3 {
+            @apply col-span-12 mt-[3em] pl-[2.25%];
+        }
+
+        .small-box-wrapper {
+
+           @apply grid xl:grid-cols-10 grid-cols-12 gap-[15px] xl:col-span-10 xl:ml-0 ml-[15px] col-span-12 xl:col-start-3 relative;
+
+           .small-box {
+              @apply col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2;
+           }
+           
+            
+        }
+    }
+}

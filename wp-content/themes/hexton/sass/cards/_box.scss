@@ -1,8 +1,8 @@
 .box {
-    @apply col-span-12 sm:col-span-6 lg:col-span-3 relative overflow-clip flex;
+    @apply col-span-12 sm:col-span-6 lg:col-span-3 relative overflow-clip flex opacity-0;
 
     .inner-box {
-        @apply  w-full border-[1px] border-[#707070] px-[8.5%] sm:pt-[30%] pt-[10%] pb-[10%] flex flex-col ;
+        @apply  w-full border-[1px] border-[#707070] px-[8.5%] sm:pt-[20%] pt-[10%] pb-[10%] flex flex-col ;
     }
 
     &:after {
@@ -10,14 +10,14 @@
     }
 
     .icon {
-        @apply w-[35%] aspect-[1/1] flex items-end;
+        @apply w-[50%] aspect-[1/1] flex items-end;
 
         svg {
-            @apply w-full h-auto;
+            @apply w-full h-auto overflow-visible;
         }
     }
 
     .text {
-        @apply font-normal xl2:text-[1.56vw] lg:text-[1.9vw] sm:text-[3vw] text-[6vw] pt-[12%] text-winvic-bright-red leading-[1.1em] pr-[20%];
+        @apply font-normal xl2:text-[1.56vw] lg:text-[1.9vw] sm:text-[3vw] text-[6vw] pt-[12%] text-winvic-bright-red leading-[1.1em] pr-[2.5%];
     }
 }

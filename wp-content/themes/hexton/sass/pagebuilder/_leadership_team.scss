@@ -1,0 +1,48 @@
+section.leadership-team {
+    @apply bg-copy/20 border-t-[1px] border-t-winvic-bright-red;
+
+    .section-fixed:before, .section-fixed:after {
+        @apply hidden;
+    }
+
+    .section-fixed {
+        @apply border-0;
+
+        svg {
+            @apply -top-[11px]
+        }
+    }
+
+    .inner-section {
+        h2 {
+            @apply md:col-span-5 col-span-12;
+        }
+        .team {
+            @apply md:col-span-7 md:col-start-6 col-span-12 md:mt-[50px] mt-0 flex gap-[15px];
+
+            .team-profile {
+                @apply w-[283px] flex flex-col;
+
+                .team-image {
+                    @apply aspect-[283/347];
+
+                    img {
+                        @apply w-full h-full object-cover;
+                    }
+                } 
+
+                .name-panel {
+                    @apply bg-winvic-bright-red px-[20px] py-[10px] -translate-y-[1px] grow;
+
+                    .name {
+                        @apply text-white text-[24px] font-medium leading-[1.2em];
+                    }
+
+                    .role {
+                        @apply text-white text-[20px] font-light leading-[1.2em];
+                    }
+                }
+            }
+        }
+    }
+}

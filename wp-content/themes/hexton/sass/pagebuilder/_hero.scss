@@ -102,7 +102,7 @@ section.hero {
     }
 
     .info-box {
-        @apply absolute bg-white md:bottom-[20px] bottom-[15px] md:left-[20px] left-[15px] lg:px-[3%] px-[30px] lg:py-[2.5%] py-[25px];
+        @apply absolute bg-white lg:bottom-[20px] bottom-[15px] lg:left-[20px] left-[15px] lg:px-[3%] px-[30px] lg:py-[2.5%] py-[25px];
 
         h1 {
             @apply font-normal min-[1920px]:text-[70px] lg:text-[3.7vw] md:text-[32px] text-[26px] leading-[1em] text-winvic-red mb-[0.5em];

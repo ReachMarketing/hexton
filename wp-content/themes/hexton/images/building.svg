@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.08 117.43"><defs><style>.cls-1{fill:#8b2332;}.cls-2{fill:#999aa1;}.cls-3{fill:#e2231a;}</style></defs><g id="Group_160"><path id="Path_296" class="cls-3" d="M91.65,0l-58.37,51.56v65.87h116.8V51.56L91.65,0Z"/><path id="Path_297" class="cls-2" d="M2.09,52.5L58.37,2.78l56.28,49.72v62.85H2.09v-62.85ZM58.37,0L0,51.56v65.87h116.74V51.56L58.37,0Z"/><path id="Path_298" class="cls-1" d="M33.28,51.56v65.87h83.45V51.56L75.04,14.66l-41.76,36.9Z"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="173.058" height="124.097" viewBox="0 0 173.058 124.097">
+  <defs>
+
+    <clipPath id="building2-clip">
+      <path class="star2-geo" d="M58.37,0L0,51.56v65.87h116.8V51.56L58.37,0Z" fill="#e2231a" />
+    </clipPath>
+  </defs>
+
+
+  <path class="star1-geo" fill="#FFFFFF" stroke="#444444" d="M58.37,0L0,51.56v65.87h116.8V51.56L58.37,0Z" />
+
+  <path class="star2-geo" fill="#E2231A" d="M58.37,0L0,51.56v65.87h116.8V51.56L58.37,0Z" />
+
+  <path class="star1-geo" fill="#8B2332" clip-path="url(#building2-clip)" d="M58.37,0L0,51.56v65.87h116.8V51.56L58.37,0Z" />
+</svg>

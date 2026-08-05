@@ -1,14 +1,15 @@
-<svg id="Group_96" data-name="Group 96" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121.055" height="118.983" viewBox="0 0 121.055 118.983">
+<svg xmlns="http://www.w3.org/2000/svg" width="133.058" height="124.097" viewBox="0 0 133.058 124.097">
   <defs>
-    <clipPath id="clip-path10">
-      <rect id="Rectangle_44" data-name="Rectangle 44" width="121.055" height="118.983" fill="none"/>
+
+    <clipPath id="people2-clip">
+      <path class="star2-geo" d="M79.963,118.983V79A39.982,39.982,0,1,0,0,79v39.982Z M20.373,19.609A19.608,19.608,0,1,0,39.982,0,19.609,19.609,0,0,0,20.373,19.609Z"  fill="#e2231a" />
     </clipPath>
   </defs>
-  <g id="Group_95" data-name="Group 95" clip-path="url(#clip-path10)">
-    <path id="Path_175" data-name="Path 175" d="M81.074,40.95A38.1,38.1,0,0,0,43.022,79v37.981h76.034V79A38.06,38.06,0,0,0,81.074,40.95m0-2A40.128,40.128,0,0,1,121.056,79v39.981H41.022V79A40.143,40.143,0,0,1,81.074,38.95" transform="translate(-41.023 0)" fill="#999aa1"/>
-    <path id="Path_176" data-name="Path 176" d="M79.963,118.983V79A39.982,39.982,0,1,0,0,79v39.982Z" transform="translate(41.092 0)" fill="#e2231a" fill-rule="evenodd"/>
-    <path id="Path_177" data-name="Path 177" d="M60.475,44.642A39.935,39.935,0,0,0,40.519,79.251v39.714H80.5V79.251A40,40,0,0,0,60.475,44.642" transform="translate(0.035 0)" fill="#8b2332" fill-rule="evenodd"/>
-    <path id="Path_178" data-name="Path 178" d="M81.039,2A17.608,17.608,0,1,0,98.648,19.609,17.629,17.629,0,0,0,81.039,2m0-2A19.608,19.608,0,1,1,61.43,19.609,19.609,19.609,0,0,1,81.039,0" transform="translate(-41.023)" fill="#999aa1"/>
-    <path id="Path_179" data-name="Path 179" d="M20.373,19.609A19.608,19.608,0,1,0,39.982,0,19.609,19.609,0,0,0,20.373,19.609" transform="translate(41.092)" fill="#e2231a" fill-rule="evenodd"/>
-  </g>
+
+
+  <path class="star1-geo" fill="#FFFFFF" stroke="#444444" d="M79.963,118.983V79A39.982,39.982,0,1,0,0,79v39.982Z M20.373,19.609A19.608,19.608,0,1,0,39.982,0,19.609,19.609,0,0,0,20.373,19.609Z" fill="#e2231a" />
+
+  <path class="star2-geo" fill="#E2231A" d="M79.963,118.983V79A39.982,39.982,0,1,0,0,79v39.982Z M20.373,19.609A19.608,19.608,0,1,0,39.982,0,19.609,19.609,0,0,0,20.373,19.609Z" fill="#e2231a" />
+
+  <path class="star1-geo" fill="#8B2332" clip-path="url(#people2-clip)" d="M79.963,118.983V79A39.982,39.982,0,1,0,0,79v39.982Z M20.373,19.609A19.608,19.608,0,1,0,39.982,0,19.609,19.609,0,0,0,20.373,19.609Z" fill="#e2231a" />
 </svg>

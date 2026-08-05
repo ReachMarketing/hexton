@@ -1,7 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="186.906" height="146.219" viewBox="0 0 186.906 146.219">
-  <g id="Group_153" data-name="Group 153" transform="translate(0 0.001)">
-    <path id="Path_287" data-name="Path 287" d="M48.968,90.647l.373-1.149-.978-.71L5.119,57.368H59.781l.373-1.149L76.673,5.382,93.191,56.219l.373,1.149h54.662L104.981,88.787,104,89.5l.373,1.149L120.9,141.485,77.65,110.065l-.977-.71-.977.71L32.45,141.485ZM76.673,0l-18.1,55.706H0L47.387,90.133l-18.1,55.706L76.673,111.41l47.387,34.429-18.1-55.706,47.387-34.428H94.773Z" transform="translate(0 0)" fill="#999aa1"/>
-    <path id="Path_288" data-name="Path 288" d="M98.931,56.161H40.358L87.745,90.59l-18.1,55.705,47.386-34.428,47.386,34.428-18.1-55.705L193.7,56.161H135.131L117.031.456Z" transform="translate(-6.796 -0.077)" fill="#e2231a"/>
-    <path id="Path_289" data-name="Path 289" d="M157.108,67.441H40.358l47.387,34.428-6.989,21.51,17.978,13.061,17.978-13.061-6.989-21.51Z" transform="translate(-6.796 -11.357)" fill="#8b2332"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="183.342" height="145.839" viewBox="40.358 0.456 183.342 145.839">
+  <defs>
+    <!-- Clip area driven by Star 2 (Red star position) -->
+    <clipPath id="star2-clip">
+      <path class="star2-geo" d="M117.031,.456 L98.931,56.161 H40.358 L87.745,90.59 L69.645,146.295 L117.031,111.867 L164.417,146.295 L146.317,90.59 L193.7,56.161 H135.131 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- 1. Star 1 Base: Solid White (Stationary) -->
+  <path class="star1-geo" fill="#FFFFFF" stroke="#444444" d="M117.031,.456 L98.931,56.161 H40.358 L87.745,90.59 L69.645,146.295 L117.031,111.867 L164.417,146.295 L146.317,90.59 L193.7,56.161 H135.131 Z" />
+
+  <!-- 2. Star 2: Solid Red (Moves Right) -->
+  <path class="star2-geo" fill="#E2231A" d="M117.031,.456 L98.931,56.161 H40.358 L87.745,90.59 L69.645,146.295 L117.031,111.867 L164.417,146.295 L146.317,90.59 L193.7,56.161 H135.131 Z" />
+
+  <!-- 3. Intersection Layer: Solid Burgundy (White Star geometry clipped by Red Star mask) -->
+  <path class="star1-geo" fill="#8B2332" clip-path="url(#star2-clip)" d="M117.031,.456 L98.931,56.161 H40.358 L87.745,90.59 L69.645,146.295 L117.031,111.867 L164.417,146.295 L146.317,90.59 L193.7,56.161 H135.131 Z" />
 </svg>

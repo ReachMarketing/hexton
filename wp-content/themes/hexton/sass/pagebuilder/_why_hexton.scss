@@ -1,0 +1,40 @@
+section.why-hexton {
+
+    .inner-section {
+
+        @apply relative;
+    
+        .left-column {
+            @apply col-span-12 lg:col-span-5;
+        }
+
+        .box-wrapper {
+            @apply lg:col-span-9 col-span-12 lg:col-start-4 col-start-1 lg:grid-cols-9 grid-cols-12 grid gap-[15px] relative lg:ml-0 ml-[15px];
+
+            .box:nth-child(5), .box:nth-child(7)  {
+                @apply lg:col-start-4;
+            }
+
+            .box {
+
+                @apply xl:aspect-[1/1];
+                
+                &.hardhat {
+                    .icon {
+                        @apply w-[50%] -mt-[22%];
+                    }
+                }
+
+                &.star {
+                    .icon {
+                        @apply w-[45%] -mt-[10%];
+                    }
+                }
+            }
+        }
+
+        .image {
+            @apply lg:absolute bottom-0 left-0 lg:w-[70%] lg:-translate-y-[15%] w-full col-span-12 lg:translate-x-0 -translate-x-[8px] lg:mt-0 mt-[30px] pr-[7px];
+        }
+    }
+}

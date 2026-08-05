@@ -1,0 +1,77 @@
+section.projects {
+    .inner-section {
+        @apply pb-[100px];
+        .slider-wrapper {
+            @apply col-span-12 relative mt-[5%];
+
+            .left-overlay {
+                @apply absolute left-0 top-0 w-1/4 h-full bg-winvic-red/90 lg:border-r-[20px] border-r-[15px] border-r-white z-[1000];
+
+                .top-left {
+                    @apply left-auto right-0 translate-x-full
+                }
+            }
+
+            .right-overlay {
+                @apply absolute right-0 top-0 w-[16.666666%] h-full bg-white/70 z-[1000];
+            }
+
+            .info-block {
+                @apply absolute left-[10%] -bottom-[150px] border-l-copy border-y-copy border-r-0 border-[1px] bg-white z-[1005] pl-[45px] pr-[25px] w-[500px] min-h-[300px] pt-[40px] pb-[25px];
+
+                &:before {
+                    @apply content-[""] w-[72px] h-[72px] bg-white top-[4px] right-[9.5px] absolute translate-x-full -rotate-45 origin-bottom border-r-[1px] border-r-copy z-[1050] aspect-[1/1];
+                }
+
+                &:after {
+                    @apply content-[""] w-[10.85%] h-[calc(100%-50px)] bg-white z-[1049] bottom-0 right-[1px] translate-y-[0.5%] translate-x-full absolute border-r-[1px] border-b-[1px] border-copy;
+                }
+
+                .subtitle {
+                    @apply text-[36px] text-copy font-light leading-[1.2em];
+                }
+
+                .title {
+                    @apply text-[36px] text-copy font-medium leading-[1.2em];
+                }
+
+                .text {
+                    @apply text-[24px] font-normal text-copy leading-[1.25em] mt-[0.8em];
+                }
+            }
+
+            
+            
+        }
+    }
+}
+
+.splide-pagination {
+    @apply absolute right-[8.333333%] top-0 h-full flex items-center z-[1200];
+
+    .splide-next {
+        @apply w-[80px] h-[80px] bg-white rounded-full border-[2px] border-winvic-red flex items-center justify-center cursor-pointer relative overflow-clip ;
+
+        .inner-circle {
+            @apply absolute w-full h-full top-0 left-0 bg-winvic-red rounded-full -translate-x-full duration-300 ease-out transition-transform;
+        }
+
+        svg {
+            @apply relative z-[1600];
+
+            path, line {
+                @apply stroke-winvic-red duration-300 ease-out transition-transform delay-200;
+            }
+        }
+
+        &:hover {
+            .inner-circle {
+                @apply translate-x-0;
+            }
+
+            svg path, svg line {
+                @apply stroke-white;
+            }
+        }
+    }
+}

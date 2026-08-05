@@ -8,7 +8,7 @@ $svg = file_get_contents(get_bloginfo('template_url') . '/images/' . $icon . '.s
 
 echo <<<HTML
 
-<div class="info-box box {$icon}">
+<div class="info-box box boxFade {$icon}">
     <div class="inner-box">
         <div class="icon">
             {$svg}

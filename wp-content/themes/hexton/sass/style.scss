@@ -17,6 +17,8 @@ Author URI: https://www.reachmarketing.co.uk
  **/
 @import "structure/general";
 @import "structure/header";
+@import "structure/footer";
+@import "structure/icons";
 
 /********
  * Page Builder
@@ -24,8 +26,15 @@ Author URI: https://www.reachmarketing.co.uk
 @import "pagebuilder/hero";
 @import "pagebuilder/intro";
 @import "pagebuilder/who_we_are";
+@import "pagebuilder/what_we_do";
+@import "pagebuilder/why_hexton";
+@import "pagebuilder/projects";
+@import "pagebuilder/leadership_team";
+@import "pagebuilder/contact_us";
 
 /********
  * Cards
  **/
 @import "cards/box";
+@import "cards/small_box";
+@import "cards/slide";

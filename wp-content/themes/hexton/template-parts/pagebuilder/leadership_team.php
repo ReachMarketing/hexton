@@ -3,9 +3,7 @@
 $section = $args['section'] ?? "";
 $anchor = $section['anchor_id'] ?? "";
 $title = $section['title'] ?? "";
-$intro = $section['intro'] ?? "";
-$content = $section['content'] ?? "";
-$images = $section['images'] ?? "";
+$teams = $section['team'] ?? "";
 
 echo <<<HTML
     <section class="section leadership-team" id="{$anchor}">
@@ -15,8 +13,20 @@ HTML;
 get_template_part('template-parts/section_title', null, ['title' => $title]);
 
 echo <<<HTML
-        <div class="intro-text">
-            {$intro}
+        <h2 class="section-title fadeIn">
+            {$title}
+        </h2>
+
+        <div class="team">
+HTML;
+
+if ($teams) {
+    foreach ($teams as $team) {
+        get_template_part('template-parts/cards/team', null, ['team' => $team]);
+    }
+}
+
+echo <<<HTML
         </div>
 
         </div>

@@ -1,0 +1,87 @@
+.box.tick {
+    .inner-box {
+        @apply pt-[30%];
+    }
+    .icon {
+        @apply w-[38%];
+    }
+    
+    .star2-geo {
+        @apply -translate-y-[30px] opacity-100;
+    }
+}
+
+.box.building {
+    .star2-geo {
+        @apply translate-x-[35px] opacity-100;
+    }
+}
+
+.box.leaf {
+    .star2-geo {
+        @apply translate-x-[60px] opacity-100;
+    }
+}
+
+.box.partner {
+    .inner-box {
+        @apply pt-[28.5%];
+    }
+    .icon {
+        @apply w-[40%] translate-y-[5%];
+    }
+    .star2-geo {
+        @apply translate-x-[44px] -translate-y-[44px] opacity-100;
+    }
+    .extra-circle {
+        @apply opacity-100 -translate-x-[3px] -translate-y-[11px] scale-110;
+    }
+}
+
+.box.star {
+    .inner-box {
+        @apply pt-[32.5%];
+    }
+    .icon {
+        @apply w-[40%];
+    }
+    .star2-geo {
+        @apply translate-x-[40px] opacity-100;
+    }
+}
+
+.box.people {
+    .inner-box {
+        @apply pt-[28.5%];
+    }
+    .icon {
+        @apply w-[40%] translate-y-[5%];
+    }
+    .star2-geo {
+        @apply translate-x-[40px]  opacity-100;
+    }
+}
+
+.box.shield {
+    .inner-box {
+        @apply pt-[26%];
+    }
+    .icon {
+        @apply w-[40%] translate-y-[5%];
+    }
+    .star2-geo {
+        @apply translate-x-[30px]  opacity-100;
+    }
+}
+
+.box.hardhat {
+    .inner-box {
+        @apply pt-[37%];
+    }
+    .icon {
+        @apply w-[45%] translate-y-[5%];
+    }
+    .star2-geo {
+        @apply translate-x-[44px]  opacity-100;
+    }
+}

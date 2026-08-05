@@ -13,10 +13,6 @@ echo <<<HTML
             <path id="Polygon_3" data-name="Polygon 3" d="M46,0,92,45H0Z" transform="translate(266 8808) rotate(180)" fill="#fff"/>
         </g>
     </svg>
-
-    <h2 class="section-title fadeIn">
-        {$title}
-    </h2>
 </div>
 
 HTML;
